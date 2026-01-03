@@ -35,26 +35,26 @@ I installed the java program on a Raspberry PI 3B as a service, the installation
     -> sudo apt install default-jdk -y
 2. control it
     -> java --version
-    _openjdk 21.0.9 2025-10-21
-    OpenJDK Runtime Environment (build 21.0.9+10-Debian-1deb13u1)
-    OpenJDK 64-Bit Server VM (build 21.0.9+10-Debian-1deb13u1, mixed mode, sharing)_
+    _openjdk 21.0.9 2025-10-21<br>
+    OpenJDK Runtime Environment (build 21.0.9+10-Debian-1deb13u1)<br>
+    OpenJDK 64-Bit Server VM (build 21.0.9+10-Debian-1deb13u1, mixed mode, sharing)_<br>
 3. copy jar file AND config.ini to your unit (I copied it to /home/pi/apps)
 4. create a systemd configuration
   ->sudo nano /etc/systemd/system/raspiplayer.service
-    [Unit]
-    Description=raspiplayer Java Application
-    After=network.target
+    [Unit]<br>
+    Description=raspiplayer Java Application<br>
+    After=network.target<br>
+    <br>
+    [Service]<br>
+    User=pi<br>
+    WorkingDirectory=/home/pi/apps<br>
+    ExecStart=/usr/bin/java -jar player.jar config.ini<br>
+    SuccessExitStatus=143<br>
+    Restart=always<br>
+    RestartSec=5<br>
     
-    [Service]
-    User=pi
-    WorkingDirectory=/home/pi/apps
-    ExecStart=/usr/bin/java -jar player.jar config.ini
-    SuccessExitStatus=143
-    Restart=always
-    RestartSec=5
-    
-    [Install]
-    WantedBy=multi-user.target
+    [Install]<br>
+    WantedBy=multi-user.target<br>
 
 5. initialize new service by:
     -> sudo systemctl daemon-reload
