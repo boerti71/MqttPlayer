@@ -13,20 +13,20 @@ Sent to the topic (in my case, according to config.ini)
 In the config.ini file defines MQTT server and other stuff for communication with broker
 
 a possible Home assistant integration can be:
-mqtt:
-- button:
-    command_template: '{"action":"play","song":"/mnt/mp3/Jingles/dishready.mp3"}'
-    command_topic: home/nodes/sensor/raspiplayer
-    device:
-      identifiers:
-      - 01KDZ7TW7ARQEPK6NA09ETYNPZ
-      name: RaspiPlayer
-    device_class: update
-    entity_category: config
-    name: playDish
-    payload_press: PRESS
-    qos: 0.0
-    unique_id: 01KDZ7TW7ARQEPK6NA09ETYNPZ_a081db703754443cbe11d2b3a2d1beb2
+mqtt:<br>
+- button:<br>
+    command_template: '{"action":"play","song":"/mnt/mp3/Jingles/dishready.mp3"}'<br>
+    command_topic: home/nodes/sensor/raspiplayer<br>
+    device:<br>
+      identifiers:<br>
+      - 01KDZ7TW7ARQEPK6NA09ETYNPZ<br>
+      name: RaspiPlayer<br>
+    device_class: update<br>
+    entity_category: config<br>
+    name: playDish<br>
+    payload_press: PRESS<br>
+    qos: 0.0<br>
+    unique_id: 01KDZ7TW7ARQEPK6NA09ETYNPZ_a081db703754443cbe11d2b3a2d1beb2<br>
 
 
 I installed the java program on a Raspberry PI 3B as a service, the installationprocess was/is:
