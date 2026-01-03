@@ -4,9 +4,9 @@ The resource monitor is in idle around1%, when playing a song between 5-35%.
 
 ==> important for Raspberry is to install default-jdk, other Java runtimes may not work.
 
-The play command is done by a JSON string like below<br><br>
-**{"action":"play","song":"/mnt/mp3/Jingles/dishready.mp3"}**
-  --> The song location can be on a mounted folder or local folder, it should work in Linux and Windows
+The play command is done by a JSON string like below<br>
+**{"action":"play","song":"/mnt/mp3/Jingles/dishready.mp3"}**<br>
+  --> The song location can be on a mounted folder or local folder, it should work in Linux and Windows.
 Sent to the topic (in my case, according to config.ini)<br>
 **home/nodes/sensor/raspiplayer**
 
